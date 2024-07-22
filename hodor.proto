@@ -1,0 +1,59 @@
+syntax = "proto3";
+option go_package = "github.com/cyamas/grpc-demo/hodor-cache";
+
+message SetRequest {
+	string key = 1;
+	oneof value {
+		string strVal = 2;
+		int64 intVal = 3;
+		double floatVal = 4;
+		bool boolVal = 5;
+		StringArray strArr = 6;
+		IntArray intArr = 7;
+		FloatArray floatArr = 8;
+		BoolArray boolArr = 9;
+	}
+}
+
+message SetResponse {
+	string stub = 1;
+}
+
+message GetRequest {
+	string key = 1;
+}
+
+message GetResponse {
+	oneof value {
+		string strVal = 1;
+		int64 intVal = 2;
+		double floatVal = 3;
+		bool boolVal = 4;
+		StringArray strArr = 5;
+		IntArray intArr = 6;
+		FloatArray floatArr = 7;
+		BoolArray boolArr = 8;
+	}
+}
+
+message StringArray {
+	repeated string val = 1;
+}
+
+message IntArray {
+	repeated int64 val = 1;
+}
+
+message FloatArray {
+	repeated double val = 1;
+}
+
+
+message BoolArray {
+	repeated bool val = 1;
+}
+
+service Cache {
+	rpc Set(SetRequest) returns (SetResponse);
+	rpc Get(GetRequest) returns (GetResponse);
+}
