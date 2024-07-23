@@ -45,7 +45,7 @@ func Start() {
 		case "help":
 			displayHelp()
 		default:
-			fmt.Println("Invalid entry. Hodor supports 'get', 'set', and 'del' commands")
+			fmt.Println("Invalid entry. Hodor supports 'get', 'set','del', and 'help' commands")
 		}
 	}
 }
