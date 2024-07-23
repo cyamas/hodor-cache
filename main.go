@@ -18,6 +18,8 @@ type myCacheServer struct {
 
 func (cs *myCacheServer) Get(ctx context.Context, req *cache.GetRequest) (*cache.GetResponse, error) {
 	key := req.Key
+	log.Println("key: ", key)
+
 	if val, ok := cs.Cache.Get(key); ok {
 		switch v := val.(type) {
 		case string:
@@ -53,13 +55,32 @@ func (cs *myCacheServer) Get(ctx context.Context, req *cache.GetRequest) (*cache
 
 func (cs *myCacheServer) Set(ctx context.Context, req *cache.SetRequest) (*cache.SetResponse, error) {
 	key := req.Key
-	val := req.Value
+	var val interface{}
+
+	switch v := req.Value.(type) {
+	case *cache.SetRequest_StrVal:
+		val = v.StrVal
+	case *cache.SetRequest_IntVal:
+		val = v.IntVal
+	case *cache.SetRequest_FloatVal:
+		val = v.FloatVal
+	case *cache.SetRequest_BoolVal:
+		val = v.BoolVal
+	case *cache.SetRequest_StrArr:
+		val = v.StrArr
+	case *cache.SetRequest_IntArr:
+		val = v.IntArr
+	case *cache.SetRequest_FloatArr:
+		val = v.FloatArr
+	case *cache.SetRequest_BoolArr:
+		val = v.BoolArr
+	}
 
 	cs.Cache.Set(key, val, time.Hour)
-	resp := &cache.SetResponse{
+	cs.Cache.Display()
+	return &cache.SetResponse{
 		Stub: fmt.Sprintf("Set %s to %v", key, val),
-	}
-	return resp, nil
+	}, nil
 }
 
 func main() {
