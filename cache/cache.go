@@ -12,7 +12,7 @@ type Cache struct {
 }
 
 type Item struct {
-	Value      interface{}
+	Value      any
 	expiration time.Time
 }
 
@@ -31,7 +31,7 @@ func (c *Cache) Display() {
 	}
 }
 
-func (c *Cache) Set(key string, value interface{}, duration time.Duration) {
+func (c *Cache) Set(key string, value any, duration time.Duration) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
@@ -42,7 +42,7 @@ func (c *Cache) Set(key string, value interface{}, duration time.Duration) {
 	}
 }
 
-func (c *Cache) Get(key string) (interface{}, bool) {
+func (c *Cache) Get(key string) (any, bool) {
 	c.mu.RLock()
 	defer c.mu.RUnlock()
 
@@ -55,4 +55,10 @@ func (c *Cache) Get(key string) (interface{}, bool) {
 		return nil, false
 	}
 	return item.Value, true
+}
+
+func (c *Cache) Delete(key string) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	delete(c.data, key)
 }

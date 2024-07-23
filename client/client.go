@@ -40,8 +40,10 @@ func Start() {
 			handleGet(c, tokens)
 		case "set":
 			handleSet(c, tokens)
+		case "del":
+			handleDel(c, tokens)
 		default:
-			fmt.Println("Invalid entry. Hodor supports 'get' and 'set'")
+			fmt.Println("Invalid entry. Hodor supports 'get', 'set', and 'del' commands")
 		}
 	}
 }
@@ -234,4 +236,19 @@ func valToBoolArray(val string) []bool {
 		arr = append(arr, boolItem)
 	}
 	return arr
+}
+
+func handleDel(c cache.CacheClient, tokens []string) {
+	if len(tokens) != 2 {
+		fmt.Println("Invalid DEL request")
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	req := &cache.DelRequest{Key: tokens[1]}
+	resp, err := c.Del(ctx, req)
+	if err != nil {
+		log.Println("GET error: ", err)
+		return
+	}
+	fmt.Println(resp.Stub)
 }

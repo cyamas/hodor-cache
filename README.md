@@ -1,0 +1,1 @@
+Hodor is a simple gRPC-driven key-value store written in Go. To run the CLI, clone the repository, navigate to the root folder and enter 'go run main.go' into the command line. Instructions on how to use Hodor will be displayed in your terminal. You can also enter 'help' to re-display instructions.

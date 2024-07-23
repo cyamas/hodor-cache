@@ -452,6 +452,100 @@ func (*GetResponse_FloatArr) isGetResponse_Value() {}
 
 func (*GetResponse_BoolArr) isGetResponse_Value() {}
 
+type DelRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+}
+
+func (x *DelRequest) Reset() {
+	*x = DelRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_hodor_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DelRequest) ProtoMessage() {}
+
+func (x *DelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_hodor_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DelRequest.ProtoReflect.Descriptor instead.
+func (*DelRequest) Descriptor() ([]byte, []int) {
+	return file_hodor_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *DelRequest) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+type DelResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Stub string `protobuf:"bytes,1,opt,name=stub,proto3" json:"stub,omitempty"`
+}
+
+func (x *DelResponse) Reset() {
+	*x = DelResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_hodor_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DelResponse) ProtoMessage() {}
+
+func (x *DelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_hodor_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DelResponse.ProtoReflect.Descriptor instead.
+func (*DelResponse) Descriptor() ([]byte, []int) {
+	return file_hodor_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DelResponse) GetStub() string {
+	if x != nil {
+		return x.Stub
+	}
+	return ""
+}
+
 type StringArray struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -463,7 +557,7 @@ type StringArray struct {
 func (x *StringArray) Reset() {
 	*x = StringArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hodor_proto_msgTypes[4]
+		mi := &file_hodor_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -476,7 +570,7 @@ func (x *StringArray) String() string {
 func (*StringArray) ProtoMessage() {}
 
 func (x *StringArray) ProtoReflect() protoreflect.Message {
-	mi := &file_hodor_proto_msgTypes[4]
+	mi := &file_hodor_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -489,7 +583,7 @@ func (x *StringArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringArray.ProtoReflect.Descriptor instead.
 func (*StringArray) Descriptor() ([]byte, []int) {
-	return file_hodor_proto_rawDescGZIP(), []int{4}
+	return file_hodor_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *StringArray) GetVal() []string {
@@ -510,7 +604,7 @@ type IntArray struct {
 func (x *IntArray) Reset() {
 	*x = IntArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hodor_proto_msgTypes[5]
+		mi := &file_hodor_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -523,7 +617,7 @@ func (x *IntArray) String() string {
 func (*IntArray) ProtoMessage() {}
 
 func (x *IntArray) ProtoReflect() protoreflect.Message {
-	mi := &file_hodor_proto_msgTypes[5]
+	mi := &file_hodor_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -536,7 +630,7 @@ func (x *IntArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntArray.ProtoReflect.Descriptor instead.
 func (*IntArray) Descriptor() ([]byte, []int) {
-	return file_hodor_proto_rawDescGZIP(), []int{5}
+	return file_hodor_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *IntArray) GetVal() []int64 {
@@ -557,7 +651,7 @@ type FloatArray struct {
 func (x *FloatArray) Reset() {
 	*x = FloatArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hodor_proto_msgTypes[6]
+		mi := &file_hodor_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -570,7 +664,7 @@ func (x *FloatArray) String() string {
 func (*FloatArray) ProtoMessage() {}
 
 func (x *FloatArray) ProtoReflect() protoreflect.Message {
-	mi := &file_hodor_proto_msgTypes[6]
+	mi := &file_hodor_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -583,7 +677,7 @@ func (x *FloatArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FloatArray.ProtoReflect.Descriptor instead.
 func (*FloatArray) Descriptor() ([]byte, []int) {
-	return file_hodor_proto_rawDescGZIP(), []int{6}
+	return file_hodor_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *FloatArray) GetVal() []float64 {
@@ -604,7 +698,7 @@ type BoolArray struct {
 func (x *BoolArray) Reset() {
 	*x = BoolArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hodor_proto_msgTypes[7]
+		mi := &file_hodor_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -617,7 +711,7 @@ func (x *BoolArray) String() string {
 func (*BoolArray) ProtoMessage() {}
 
 func (x *BoolArray) ProtoReflect() protoreflect.Message {
-	mi := &file_hodor_proto_msgTypes[7]
+	mi := &file_hodor_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +724,7 @@ func (x *BoolArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BoolArray.ProtoReflect.Descriptor instead.
 func (*BoolArray) Descriptor() ([]byte, []int) {
-	return file_hodor_proto_rawDescGZIP(), []int{7}
+	return file_hodor_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *BoolArray) GetVal() []bool {
@@ -686,22 +780,29 @@ var file_hodor_proto_rawDesc = []byte{
 	0x0a, 0x07, 0x62, 0x6f, 0x6f, 0x6c, 0x41, 0x72, 0x72, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x0a, 0x2e, 0x42, 0x6f, 0x6f, 0x6c, 0x41, 0x72, 0x72, 0x61, 0x79, 0x48, 0x00, 0x52, 0x07, 0x62,
 	0x6f, 0x6f, 0x6c, 0x41, 0x72, 0x72, 0x42, 0x07, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22,
-	0x1f, 0x0a, 0x0b, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12, 0x10,
-	0x0a, 0x03, 0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x03, 0x76, 0x61, 0x6c,
-	0x22, 0x1c, 0x0a, 0x08, 0x49, 0x6e, 0x74, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12, 0x10, 0x0a, 0x03,
-	0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x03, 0x76, 0x61, 0x6c, 0x22, 0x1e,
-	0x0a, 0x0a, 0x46, 0x6c, 0x6f, 0x61, 0x74, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12, 0x10, 0x0a, 0x03,
-	0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x01, 0x52, 0x03, 0x76, 0x61, 0x6c, 0x22, 0x1d,
-	0x0a, 0x09, 0x42, 0x6f, 0x6f, 0x6c, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x76,
-	0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x08, 0x52, 0x03, 0x76, 0x61, 0x6c, 0x32, 0x4b, 0x0a,
-	0x05, 0x43, 0x61, 0x63, 0x68, 0x65, 0x12, 0x20, 0x0a, 0x03, 0x53, 0x65, 0x74, 0x12, 0x0b, 0x2e,
-	0x53, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0c, 0x2e, 0x53, 0x65, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12,
-	0x0b, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0c, 0x2e, 0x47,
-	0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x29, 0x5a, 0x27, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x79, 0x61, 0x6d, 0x61, 0x73, 0x2f,
-	0x67, 0x72, 0x70, 0x63, 0x2d, 0x64, 0x65, 0x6d, 0x6f, 0x2f, 0x68, 0x6f, 0x64, 0x6f, 0x72, 0x2d,
-	0x63, 0x61, 0x63, 0x68, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x1e, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a,
+	0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x22,
+	0x21, 0x0a, 0x0b, 0x44, 0x65, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12,
+	0x0a, 0x04, 0x73, 0x74, 0x75, 0x62, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x73, 0x74,
+	0x75, 0x62, 0x22, 0x1f, 0x0a, 0x0b, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x72, 0x72, 0x61,
+	0x79, 0x12, 0x10, 0x0a, 0x03, 0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x03,
+	0x76, 0x61, 0x6c, 0x22, 0x1c, 0x0a, 0x08, 0x49, 0x6e, 0x74, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12,
+	0x10, 0x0a, 0x03, 0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x03, 0x76, 0x61,
+	0x6c, 0x22, 0x1e, 0x0a, 0x0a, 0x46, 0x6c, 0x6f, 0x61, 0x74, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12,
+	0x10, 0x0a, 0x03, 0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x01, 0x52, 0x03, 0x76, 0x61,
+	0x6c, 0x22, 0x1d, 0x0a, 0x09, 0x42, 0x6f, 0x6f, 0x6c, 0x41, 0x72, 0x72, 0x61, 0x79, 0x12, 0x10,
+	0x0a, 0x03, 0x76, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x03, 0x28, 0x08, 0x52, 0x03, 0x76, 0x61, 0x6c,
+	0x32, 0x6d, 0x0a, 0x05, 0x43, 0x61, 0x63, 0x68, 0x65, 0x12, 0x20, 0x0a, 0x03, 0x53, 0x65, 0x74,
+	0x12, 0x0b, 0x2e, 0x53, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0c, 0x2e,
+	0x53, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x03, 0x47,
+	0x65, 0x74, 0x12, 0x0b, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x0c, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x20, 0x0a,
+	0x03, 0x44, 0x65, 0x6c, 0x12, 0x0b, 0x2e, 0x44, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x0c, 0x2e, 0x44, 0x65, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
+	0x29, 0x5a, 0x27, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x79,
+	0x61, 0x6d, 0x61, 0x73, 0x2f, 0x67, 0x72, 0x70, 0x63, 0x2d, 0x64, 0x65, 0x6d, 0x6f, 0x2f, 0x68,
+	0x6f, 0x64, 0x6f, 0x72, 0x2d, 0x63, 0x61, 0x63, 0x68, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -716,32 +817,36 @@ func file_hodor_proto_rawDescGZIP() []byte {
 	return file_hodor_proto_rawDescData
 }
 
-var file_hodor_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_hodor_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_hodor_proto_goTypes = []any{
 	(*SetRequest)(nil),  // 0: SetRequest
 	(*SetResponse)(nil), // 1: SetResponse
 	(*GetRequest)(nil),  // 2: GetRequest
 	(*GetResponse)(nil), // 3: GetResponse
-	(*StringArray)(nil), // 4: StringArray
-	(*IntArray)(nil),    // 5: IntArray
-	(*FloatArray)(nil),  // 6: FloatArray
-	(*BoolArray)(nil),   // 7: BoolArray
+	(*DelRequest)(nil),  // 4: DelRequest
+	(*DelResponse)(nil), // 5: DelResponse
+	(*StringArray)(nil), // 6: StringArray
+	(*IntArray)(nil),    // 7: IntArray
+	(*FloatArray)(nil),  // 8: FloatArray
+	(*BoolArray)(nil),   // 9: BoolArray
 }
 var file_hodor_proto_depIdxs = []int32{
-	4,  // 0: SetRequest.strArr:type_name -> StringArray
-	5,  // 1: SetRequest.intArr:type_name -> IntArray
-	6,  // 2: SetRequest.floatArr:type_name -> FloatArray
-	7,  // 3: SetRequest.boolArr:type_name -> BoolArray
-	4,  // 4: GetResponse.strArr:type_name -> StringArray
-	5,  // 5: GetResponse.intArr:type_name -> IntArray
-	6,  // 6: GetResponse.floatArr:type_name -> FloatArray
-	7,  // 7: GetResponse.boolArr:type_name -> BoolArray
+	6,  // 0: SetRequest.strArr:type_name -> StringArray
+	7,  // 1: SetRequest.intArr:type_name -> IntArray
+	8,  // 2: SetRequest.floatArr:type_name -> FloatArray
+	9,  // 3: SetRequest.boolArr:type_name -> BoolArray
+	6,  // 4: GetResponse.strArr:type_name -> StringArray
+	7,  // 5: GetResponse.intArr:type_name -> IntArray
+	8,  // 6: GetResponse.floatArr:type_name -> FloatArray
+	9,  // 7: GetResponse.boolArr:type_name -> BoolArray
 	0,  // 8: Cache.Set:input_type -> SetRequest
 	2,  // 9: Cache.Get:input_type -> GetRequest
-	1,  // 10: Cache.Set:output_type -> SetResponse
-	3,  // 11: Cache.Get:output_type -> GetResponse
-	10, // [10:12] is the sub-list for method output_type
-	8,  // [8:10] is the sub-list for method input_type
+	4,  // 10: Cache.Del:input_type -> DelRequest
+	1,  // 11: Cache.Set:output_type -> SetResponse
+	3,  // 12: Cache.Get:output_type -> GetResponse
+	5,  // 13: Cache.Del:output_type -> DelResponse
+	11, // [11:14] is the sub-list for method output_type
+	8,  // [8:11] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
 	8,  // [8:8] is the sub-list for extension extendee
 	0,  // [0:8] is the sub-list for field type_name
@@ -802,7 +907,7 @@ func file_hodor_proto_init() {
 			}
 		}
 		file_hodor_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*StringArray); i {
+			switch v := v.(*DelRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -814,7 +919,7 @@ func file_hodor_proto_init() {
 			}
 		}
 		file_hodor_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*IntArray); i {
+			switch v := v.(*DelResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -826,7 +931,7 @@ func file_hodor_proto_init() {
 			}
 		}
 		file_hodor_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*FloatArray); i {
+			switch v := v.(*StringArray); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -838,6 +943,30 @@ func file_hodor_proto_init() {
 			}
 		}
 		file_hodor_proto_msgTypes[7].Exporter = func(v any, i int) any {
+			switch v := v.(*IntArray); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_hodor_proto_msgTypes[8].Exporter = func(v any, i int) any {
+			switch v := v.(*FloatArray); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_hodor_proto_msgTypes[9].Exporter = func(v any, i int) any {
 			switch v := v.(*BoolArray); i {
 			case 0:
 				return &v.state
@@ -876,7 +1005,7 @@ func file_hodor_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_hodor_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

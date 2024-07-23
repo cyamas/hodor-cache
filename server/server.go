@@ -84,6 +84,15 @@ func (cs *MyCacheServer) Set(ctx context.Context, req *cache.SetRequest) (*cache
 		Stub: fmt.Sprintf("Set %s to %v", key, val),
 	}, nil
 }
+
+func (cs *MyCacheServer) Del(ctx context.Context, req *cache.DelRequest) (*cache.DelResponse, error) {
+	key := req.Key
+	if _, ok := cs.Cache.Get(key); ok {
+		cs.Cache.Delete(key)
+	}
+	return &cache.DelResponse{Stub: fmt.Sprintf("Deleted key: %s", key)}, nil
+}
+
 func Start() {
 	ln, err := net.Listen("tcp", ":3004")
 	if err != nil {
